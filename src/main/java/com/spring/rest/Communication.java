@@ -21,7 +21,7 @@ public class Communication {
 
         ResponseEntity<List<HeroesDota>> responseEntity =
                 restTemplate.exchange(URL, HttpMethod.GET, null, new ParameterizedTypeReference<List<HeroesDota>>() {
-        });
+                });
         List<HeroesDota> allHeroesDota = responseEntity.getBody();
         return allHeroesDota;
     }
@@ -37,12 +37,11 @@ public class Communication {
 
         int id = heroesDota.getId();
 
-        if(id==0){
+        if (id == 0) {
             ResponseEntity<String> responseEntity = restTemplate.postForEntity(URL, heroesDota, String.class);
             System.out.println("New heroes Dota was added to Database");
             System.out.println(responseEntity.getBody());
-        }
-        else {
+        } else {
             restTemplate.put(URL, heroesDota);
             System.out.println("Heroes Dota with ID " + id + " was updated");
         }
@@ -52,7 +51,7 @@ public class Communication {
     public void deleteHeroesDota(int id) {
 
         restTemplate.delete(URL + "/" + id);
-        System.out.println("Heroes Dota with ID: "+ id + " was deleted from Database");
+        System.out.println("Heroes Dota with ID: " + id + " was deleted from Database");
 
     }
 }
