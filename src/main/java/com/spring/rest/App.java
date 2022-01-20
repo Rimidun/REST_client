@@ -32,6 +32,5 @@ public class App {
         //delete HeroesDota by id
 //        communication.deleteHeroesDota(43);
 
-
     }
 }
