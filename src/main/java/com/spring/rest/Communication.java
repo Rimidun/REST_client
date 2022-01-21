@@ -18,7 +18,6 @@ public class Communication {
     private final String URL = "http://localhost:8080/rest/dota/heroes/";
 
     public List<HeroesDota> getAllHeroesDota() {
-
         ResponseEntity<List<HeroesDota>> responseEntity =
                 restTemplate.exchange(URL, HttpMethod.GET, null, new ParameterizedTypeReference<List<HeroesDota>>() {
                 });
@@ -27,14 +26,12 @@ public class Communication {
     }
 
     public HeroesDota getHeroesDota(int id) {
-
         HeroesDota heroesDota = restTemplate.getForObject(URL + "/" + id, HeroesDota.class);
 
         return heroesDota;
     }
 
     public void saveHeroesDota(HeroesDota heroesDota) {
-
         int id = heroesDota.getId();
 
         if (id == 0) {
@@ -49,7 +46,6 @@ public class Communication {
     }
 
     public void deleteHeroesDota(int id) {
-
         restTemplate.delete(URL + "/" + id);
         System.out.println("Heroes Dota with ID: " + id + " was deleted from Database");
 

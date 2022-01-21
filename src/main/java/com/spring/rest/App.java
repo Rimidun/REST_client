@@ -1,7 +1,10 @@
 package com.spring.rest;
 
 import com.spring.rest.configuration.MyConfig;
+import com.spring.rest.entity.HeroesDota;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.List;
 
 public class App {
     public static void main(String[] args) {
@@ -10,8 +13,8 @@ public class App {
         Communication communication = context.getBean("communication", Communication.class);
 
         //get all HeroesDota
-//        List<HeroesDota> allHeroesDota = communication.getAllHeroesDota();
-//        System.out.println(allHeroesDota);
+        List<HeroesDota> allHeroesDota = communication.getAllHeroesDota();
+        System.out.println(allHeroesDota);
 //
 //                ---------------------------------------------------
 
